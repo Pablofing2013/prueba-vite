@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: '0.0.0.0',  // Asegura que Vite escuche en todas las interfaces de red
-    port: 5173,        // Puedes ajustar el puerto si lo necesitas
-  }
+    host: '0.0.0.0',
+    port: process.env.VITE_PORT || 5173,  // Si no se define en .env, usa 5173 por defecto
+  },
 })
